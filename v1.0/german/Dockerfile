@@ -8,10 +8,9 @@ ENV LANGUAGE_MODEL    de.tar.gz
 
 RUN mkdir -p /opt/spotlight && \
     cd /opt/spotlight && \
-    wget "https://$RELEASE_SERVER/spotlight/$RELEASE_FILENAME" && \
-    wget "https://$RELEASE_SERVER/2016-10/de/model/$LANGUAGE_MODEL" && \
-    tar xvf $LANGUAGE_MODEL  && \
-    rm  $LANGUAGE_MODEL 
+    wget https://sourceforge.net/projects/dbpedia-spotlight/files/2016-10/en/model/en.tar.gz && \
+    https://sourceforge.net/projects/dbpedia-spotlight/files/spotlight/dbpedia-spotlight-1.0.0.jar && \
+    tar -xvf en.tar.gz  && \
 
 ADD spotlight.sh /bin/spotlight.sh
 RUN chmod +x /bin/spotlight.sh
